@@ -1,0 +1,32 @@
+#PRIMARY STEPS
+
+#To make a vm as host machine run the below command in host vm manually and run the below script in powershell ISE in admin mode
+
+Enable-PSRemoting -Force 
+
+winrm e winrm/config/listener
+
+Set-Item wsman:\localhost\client\trustedhosts * 
+
+Restart-Service WinRM 
+
+#run the above comments in host its mandatory
+
+#Then run the files in the below order
+
+host.ps1 
+DSC_Prerequisties.ps1
+DSC_hybr_Preresquisties.ps1
+Download_unzip_hybr_vconnect_billing.ps1
+Sql_Installation.ps1
+SSMS_Installation.ps1
+CreateSql_user_and_DB.ps1
+Vconnect_Installation.ps1
+UpdateVconnectDB.ps1
+Billing_Installation.ps1
+UpdateBillingDB.ps1
+Hybr_Installation.ps1
+UpdateDB.ps1
+
+
+
